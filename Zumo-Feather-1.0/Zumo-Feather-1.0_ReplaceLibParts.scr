@@ -1,0 +1,16 @@
+# 'EAGLE Version 9.6.2 Copyright (c) 1988-2020 Autodesk, Inc.;
+
+SET UNDO_LOG OFF;
+# Migrate parts to 'C:/Users/parke/Documents/GitHub/Rover-Robot/Zumo-Feather-1.0/Zumo-Feather-1.0.lbr'
+USE -*;
+USE 'C:/Users/parke/Documents/GitHub/Rover-Robot/Zumo-Feather-1.0/Zumo-Feather-1.0.lbr';
+#
+# SHEET 1 - MIGRATE PARTS
+#
+EDIT .s1
+REPLACE MS1 FEATHERWING_NODIM;
+REPLACE U1 ARDUINOR3-DIMENSION;
+EDIT .s1
+SET UNDO_LOG ON;
+# Put all libraries back into use
+USE *;
