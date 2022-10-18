@@ -55,7 +55,7 @@
 <layer number="45" name="Holes" color="7" fill="1" visible="no" active="yes"/>
 <layer number="46" name="Milling" color="3" fill="1" visible="no" active="yes"/>
 <layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
-<layer number="48" name="Document" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="48" name="Document" color="7" fill="1" visible="no" active="yes"/>
 <layer number="49" name="Reference" color="7" fill="1" visible="no" active="yes"/>
 <layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
 <layer number="51" name="tDocu" color="7" fill="1" visible="no" active="yes"/>
@@ -194,8 +194,6 @@
 <board>
 <fusionsync huburn="a.YnVzaW5lc3M6Y29sb3JhZG8xMDY3" projecturn="a.YnVzaW5lc3M6Y29sb3JhZG8xMDY3IzIwMjExMjI2NDc5MzM3NDI2" f3durn="urn:adsk.wipprod:dm.lineage:8AaWx44bRcCIc-5SIRjGrA" pcbguid="" lastpulledtime="" lastsyncedchangeguid="" latestrevisionid="404b5d2d-7651-43a5-9bd9-1b853211258e" lastsyncedrevisionid="404b5d2d-7651-43a5-9bd9-1b853211258e" lastboardhashguid="872ad64c-56c7-de46-c33c-30b545453aa0" lastpushedtime="2022-10-14T22:47:15Z" linktopcb3d="true"/>
 <plain>
-<rectangle x1="8.89" y1="3.81" x2="26.035" y2="24.13" layer="48"/>
-<text x="11.43" y="1.27" size="1.778" layer="48">Test Circuit</text>
 </plain>
 <libraries>
 <library name="AIMRL" urn="urn:adsk.eagle:library:28496819">
@@ -457,24 +455,18 @@
 <class number="0" name="default" width="0" drill="0">
 </class>
 </classes>
-<designrules name="default">
-<description language="de">&lt;b&gt;EAGLE Design Rules&lt;/b&gt;
+<designrules name="oshpark-2layer">
+<description language="en">&lt;b&gt;OSH Park Design Rules&lt;/b&gt;
 &lt;p&gt;
-Die Standard-Design-Rules sind so gewählt, dass sie für 
-die meisten Anwendungen passen. Sollte ihre Platine 
-besondere Anforderungen haben, treffen Sie die erforderlichen
-Einstellungen hier und speichern die Design Rules unter 
-einem neuen Namen ab.</description>
-<description language="en">&lt;b&gt;EAGLE Design Rules&lt;/b&gt;
+Please make sure your boards conform to these design rules.
+&lt;/p&gt;
 &lt;p&gt;
-The default Design Rules have been set to cover
-a wide range of applications. Your particular design
-may have different requirements, so please make the
-necessary adjustments and save your customized
-design rules under a new name.</description>
+Note, that not all DRC settings must be set by the manufacturer. Several can be adjusted for the design, including those listed on our docs page here. 
+&lt;a href=&quot;http://docs.oshpark.com/design-tools/eagle/design-rules-files/&quot;&gt;Adjustable Settings&lt;/a&gt;
+&lt;/p&gt;</description>
 <param name="layerSetup" value="(1*16)"/>
-<param name="mtCopper" value="0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm"/>
-<param name="mtIsolate" value="1.5mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm"/>
+<param name="mtCopper" value="0.035559375mm 0.0356mm 0.0356mm 0.0356mm 0.0356mm 0.0356mm 0.0356mm 0.0356mm 0.0356mm 0.0356mm 0.0356mm 0.0356mm 0.0356mm 0.0356mm 0.0356mm 0.035559375mm"/>
+<param name="mtIsolate" value="1.6mm 0.1499mm 0.2007mm 0.1499mm 0.2007mm 0.1499mm 0.2007mm 0.1499mm 0.2007mm 0.1499mm 0.2007mm 0.1499mm 0.2007mm 0.1499mm 0.2007mm"/>
 <param name="mdWireWire" value="6mil"/>
 <param name="mdWirePad" value="6mil"/>
 <param name="mdWireVia" value="6mil"/>
@@ -484,14 +476,14 @@ design rules under a new name.</description>
 <param name="mdSmdPad" value="6mil"/>
 <param name="mdSmdVia" value="6mil"/>
 <param name="mdSmdSmd" value="6mil"/>
-<param name="mdViaViaSameLayer" value="6mil"/>
+<param name="mdViaViaSameLayer" value="8mil"/>
 <param name="mnLayersViaInSmd" value="2"/>
-<param name="mdCopperDimension" value="40mil"/>
+<param name="mdCopperDimension" value="15mil"/>
 <param name="mdDrill" value="6mil"/>
 <param name="mdSmdStop" value="0mil"/>
 <param name="msWidth" value="6mil"/>
-<param name="msDrill" value="0.35mm"/>
-<param name="msMicroVia" value="9.99mm"/>
+<param name="msDrill" value="10mil"/>
+<param name="msMicroVia" value="10mil"/>
 <param name="msBlindViaRatio" value="0.5"/>
 <param name="rvPadTop" value="0.25"/>
 <param name="rvPadInner" value="0.25"/>
@@ -500,19 +492,19 @@ design rules under a new name.</description>
 <param name="rvViaInner" value="0.25"/>
 <param name="rvMicroViaOuter" value="0.25"/>
 <param name="rvMicroViaInner" value="0.25"/>
-<param name="rlMinPadTop" value="10mil"/>
+<param name="rlMinPadTop" value="5mil"/>
 <param name="rlMaxPadTop" value="20mil"/>
-<param name="rlMinPadInner" value="10mil"/>
+<param name="rlMinPadInner" value="5mil"/>
 <param name="rlMaxPadInner" value="20mil"/>
-<param name="rlMinPadBottom" value="10mil"/>
+<param name="rlMinPadBottom" value="5mil"/>
 <param name="rlMaxPadBottom" value="20mil"/>
-<param name="rlMinViaOuter" value="8mil"/>
+<param name="rlMinViaOuter" value="5mil"/>
 <param name="rlMaxViaOuter" value="20mil"/>
-<param name="rlMinViaInner" value="8mil"/>
+<param name="rlMinViaInner" value="5mil"/>
 <param name="rlMaxViaInner" value="20mil"/>
-<param name="rlMinMicroViaOuter" value="4mil"/>
+<param name="rlMinMicroViaOuter" value="5mil"/>
 <param name="rlMaxMicroViaOuter" value="20mil"/>
-<param name="rlMinMicroViaInner" value="4mil"/>
+<param name="rlMinMicroViaInner" value="5mil"/>
 <param name="rlMaxMicroViaInner" value="20mil"/>
 <param name="psTop" value="-1"/>
 <param name="psBottom" value="-1"/>
@@ -521,8 +513,8 @@ design rules under a new name.</description>
 <param name="psElongationOffset" value="100"/>
 <param name="mvStopFrame" value="1"/>
 <param name="mvCreamFrame" value="0"/>
-<param name="mlMinStopFrame" value="4mil"/>
-<param name="mlMaxStopFrame" value="4mil"/>
+<param name="mlMinStopFrame" value="2.5mil"/>
+<param name="mlMaxStopFrame" value="2.5mil"/>
 <param name="mlMinCreamFrame" value="0mil"/>
 <param name="mlMaxCreamFrame" value="0mil"/>
 <param name="mlViaStopLimit" value="0mil"/>
@@ -642,50 +634,50 @@ design rules under a new name.</description>
 </autorouter>
 <elements>
 <element name="U1" library="AIMRL" library_urn="urn:adsk.eagle:library:28496819" package="ARDUINOR3" package3d_urn="urn:adsk.eagle:package:37788028/2" value="BRD-ARDUINOR3-DIMENSION" x="0" y="0" smashed="yes"/>
-<element name="MS1" library="AIMRL" library_urn="urn:adsk.eagle:library:28496819" package="FEATHERWING_DIM_MNT" package3d_urn="urn:adsk.eagle:package:37822437/3" value="BRD-FEATHERWING_NODIM_NOMNT" x="14.605" y="47.625" smashed="yes" rot="MR180"/>
-<element name="J1" library="AIMRL" library_urn="urn:adsk.eagle:library:28496819" package="JST_SH_4X1" package3d_urn="urn:adsk.eagle:package:21536949/2" value="" x="65.405" y="15.24" smashed="yes" rot="MR270">
-<attribute name="ARROW_PN" value="SM04B-SRSS-TB" x="65.405" y="15.24" size="1.778" layer="28" rot="MR270" display="off"/>
-<attribute name="DATASHEET" value="https://media.digikey.com/pdf/Data%20Sheets/JST%20PDFs/SR%20Connector.pdf " x="65.405" y="15.24" size="1.778" layer="28" rot="MR270" display="off"/>
-<attribute name="DESCRIPTION" value="CONN HEADER SMD R/A 4POS 1MM" x="65.405" y="15.24" size="1.778" layer="28" rot="MR270" display="off"/>
-<attribute name="DIGI-KEY_PN" value="455-1422-2-ND" x="65.405" y="15.24" size="1.778" layer="28" rot="MR270" display="off"/>
-<attribute name="DNP" value="" x="65.405" y="15.24" size="1.778" layer="28" rot="MR270" display="off"/>
-<attribute name="MANUFACTURER" value="JST Sales America Inc." x="65.405" y="15.24" size="1.778" layer="28" rot="MR270" display="off"/>
-<attribute name="MOUSER_PN" value="SM04B-SRSS-TB" x="65.405" y="15.24" size="1.778" layer="28" rot="MR270" display="off"/>
-<attribute name="NAME" x="65.405" y="15.24" size="1.27" layer="26" rot="MR270" align="center"/>
-<attribute name="PACKAGE" value="NA" x="65.405" y="15.24" size="1.778" layer="28" rot="MR270" display="off"/>
-<attribute name="PART_NUMBER" value="SM04B-SRSS-TB" x="65.405" y="15.24" size="1.778" layer="28" rot="MR270" display="off"/>
-<attribute name="TEMP_HIGH" value="85" x="65.405" y="15.24" size="1.778" layer="28" rot="MR270" display="off"/>
-<attribute name="TEMP_LOW" value="-25C" x="65.405" y="15.24" size="1.778" layer="28" rot="MR270" display="off"/>
-<attribute name="TOLERANCE" value="NA" x="65.405" y="15.24" size="1.778" layer="28" rot="MR270" display="off"/>
-<attribute name="TYPE" value="SMD" x="65.405" y="15.24" size="1.778" layer="28" rot="MR270" display="off"/>
-<attribute name="WEIGHT_MG" value="NA" x="65.405" y="15.24" size="1.778" layer="28" rot="MR270" display="off"/>
+<element name="MS1" library="AIMRL" library_urn="urn:adsk.eagle:library:28496819" package="FEATHERWING_DIM_MNT" package3d_urn="urn:adsk.eagle:package:37822437/3" value="BRD-FEATHERWING_NODIM_NOMNT" x="10.16" y="37.465" smashed="yes" rot="MR180"/>
+<element name="J1" library="AIMRL" library_urn="urn:adsk.eagle:library:28496819" package="JST_SH_4X1" package3d_urn="urn:adsk.eagle:package:21536949/2" value="" x="66.04" y="26.67" smashed="yes" rot="MR270">
+<attribute name="ARROW_PN" value="SM04B-SRSS-TB" x="66.04" y="26.67" size="1.778" layer="28" rot="MR270" display="off"/>
+<attribute name="DATASHEET" value="https://media.digikey.com/pdf/Data%20Sheets/JST%20PDFs/SR%20Connector.pdf " x="66.04" y="26.67" size="1.778" layer="28" rot="MR270" display="off"/>
+<attribute name="DESCRIPTION" value="CONN HEADER SMD R/A 4POS 1MM" x="66.04" y="26.67" size="1.778" layer="28" rot="MR270" display="off"/>
+<attribute name="DIGI-KEY_PN" value="455-1422-2-ND" x="66.04" y="26.67" size="1.778" layer="28" rot="MR270" display="off"/>
+<attribute name="DNP" value="" x="66.04" y="26.67" size="1.778" layer="28" rot="MR270" display="off"/>
+<attribute name="MANUFACTURER" value="JST Sales America Inc." x="66.04" y="26.67" size="1.778" layer="28" rot="MR270" display="off"/>
+<attribute name="MOUSER_PN" value="SM04B-SRSS-TB" x="66.04" y="26.67" size="1.778" layer="28" rot="MR270" display="off"/>
+<attribute name="NAME" x="66.04" y="26.67" size="1.27" layer="26" rot="MR270" align="center"/>
+<attribute name="PACKAGE" value="NA" x="66.04" y="26.67" size="1.778" layer="28" rot="MR270" display="off"/>
+<attribute name="PART_NUMBER" value="SM04B-SRSS-TB" x="66.04" y="26.67" size="1.778" layer="28" rot="MR270" display="off"/>
+<attribute name="TEMP_HIGH" value="85" x="66.04" y="26.67" size="1.778" layer="28" rot="MR270" display="off"/>
+<attribute name="TEMP_LOW" value="-25C" x="66.04" y="26.67" size="1.778" layer="28" rot="MR270" display="off"/>
+<attribute name="TOLERANCE" value="NA" x="66.04" y="26.67" size="1.778" layer="28" rot="MR270" display="off"/>
+<attribute name="TYPE" value="SMD" x="66.04" y="26.67" size="1.778" layer="28" rot="MR270" display="off"/>
+<attribute name="WEIGHT_MG" value="NA" x="66.04" y="26.67" size="1.778" layer="28" rot="MR270" display="off"/>
 </element>
-<element name="J2" library="AIMRL" library_urn="urn:adsk.eagle:library:28496819" package="JST_SH_4X1" package3d_urn="urn:adsk.eagle:package:21536949/2" value="" x="3.175" y="15.875" smashed="yes" rot="MR90">
-<attribute name="ARROW_PN" value="SM04B-SRSS-TB" x="3.175" y="15.875" size="1.778" layer="28" rot="MR90" display="off"/>
-<attribute name="DATASHEET" value="https://media.digikey.com/pdf/Data%20Sheets/JST%20PDFs/SR%20Connector.pdf " x="3.175" y="15.875" size="1.778" layer="28" rot="MR90" display="off"/>
-<attribute name="DESCRIPTION" value="CONN HEADER SMD R/A 4POS 1MM" x="3.175" y="15.875" size="1.778" layer="28" rot="MR90" display="off"/>
-<attribute name="DIGI-KEY_PN" value="455-1422-2-ND" x="3.175" y="15.875" size="1.778" layer="28" rot="MR90" display="off"/>
-<attribute name="DNP" value="" x="3.175" y="15.875" size="1.778" layer="28" rot="MR90" display="off"/>
-<attribute name="MANUFACTURER" value="JST Sales America Inc." x="3.175" y="15.875" size="1.778" layer="28" rot="MR90" display="off"/>
-<attribute name="MOUSER_PN" value="SM04B-SRSS-TB" x="3.175" y="15.875" size="1.778" layer="28" rot="MR90" display="off"/>
-<attribute name="NAME" x="3.175" y="15.875" size="1.27" layer="26" rot="MR90" align="center"/>
-<attribute name="PACKAGE" value="NA" x="3.175" y="15.875" size="1.778" layer="28" rot="MR90" display="off"/>
-<attribute name="PART_NUMBER" value="SM04B-SRSS-TB" x="3.175" y="15.875" size="1.778" layer="28" rot="MR90" display="off"/>
-<attribute name="TEMP_HIGH" value="85" x="3.175" y="15.875" size="1.778" layer="28" rot="MR90" display="off"/>
-<attribute name="TEMP_LOW" value="-25C" x="3.175" y="15.875" size="1.778" layer="28" rot="MR90" display="off"/>
-<attribute name="TOLERANCE" value="NA" x="3.175" y="15.875" size="1.778" layer="28" rot="MR90" display="off"/>
-<attribute name="TYPE" value="SMD" x="3.175" y="15.875" size="1.778" layer="28" rot="MR90" display="off"/>
-<attribute name="WEIGHT_MG" value="NA" x="3.175" y="15.875" size="1.778" layer="28" rot="MR90" display="off"/>
+<element name="J2" library="AIMRL" library_urn="urn:adsk.eagle:library:28496819" package="JST_SH_4X1" package3d_urn="urn:adsk.eagle:package:21536949/2" value="" x="2.54" y="26.67" smashed="yes" rot="MR90">
+<attribute name="ARROW_PN" value="SM04B-SRSS-TB" x="2.54" y="26.67" size="1.778" layer="28" rot="MR90" display="off"/>
+<attribute name="DATASHEET" value="https://media.digikey.com/pdf/Data%20Sheets/JST%20PDFs/SR%20Connector.pdf " x="2.54" y="26.67" size="1.778" layer="28" rot="MR90" display="off"/>
+<attribute name="DESCRIPTION" value="CONN HEADER SMD R/A 4POS 1MM" x="2.54" y="26.67" size="1.778" layer="28" rot="MR90" display="off"/>
+<attribute name="DIGI-KEY_PN" value="455-1422-2-ND" x="2.54" y="26.67" size="1.778" layer="28" rot="MR90" display="off"/>
+<attribute name="DNP" value="" x="2.54" y="26.67" size="1.778" layer="28" rot="MR90" display="off"/>
+<attribute name="MANUFACTURER" value="JST Sales America Inc." x="2.54" y="26.67" size="1.778" layer="28" rot="MR90" display="off"/>
+<attribute name="MOUSER_PN" value="SM04B-SRSS-TB" x="2.54" y="26.67" size="1.778" layer="28" rot="MR90" display="off"/>
+<attribute name="NAME" x="2.54" y="26.67" size="1.27" layer="26" rot="MR90" align="center"/>
+<attribute name="PACKAGE" value="NA" x="2.54" y="26.67" size="1.778" layer="28" rot="MR90" display="off"/>
+<attribute name="PART_NUMBER" value="SM04B-SRSS-TB" x="2.54" y="26.67" size="1.778" layer="28" rot="MR90" display="off"/>
+<attribute name="TEMP_HIGH" value="85" x="2.54" y="26.67" size="1.778" layer="28" rot="MR90" display="off"/>
+<attribute name="TEMP_LOW" value="-25C" x="2.54" y="26.67" size="1.778" layer="28" rot="MR90" display="off"/>
+<attribute name="TOLERANCE" value="NA" x="2.54" y="26.67" size="1.778" layer="28" rot="MR90" display="off"/>
+<attribute name="TYPE" value="SMD" x="2.54" y="26.67" size="1.778" layer="28" rot="MR90" display="off"/>
+<attribute name="WEIGHT_MG" value="NA" x="2.54" y="26.67" size="1.778" layer="28" rot="MR90" display="off"/>
 </element>
-<element name="JP2" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X08" package3d_urn="urn:adsk.eagle:package:22409/2" value="" x="3.81" y="41.91" smashed="yes" rot="MR270">
-<attribute name="NAME" x="1.9812" y="52.1462" size="1.27" layer="26" ratio="10" rot="MR270"/>
-<attribute name="POPULARITY" value="67" x="3.81" y="41.91" size="1.778" layer="28" rot="MR270" display="off"/>
-<attribute name="VALUE" x="6.985" y="52.07" size="1.27" layer="28" rot="MR270"/>
+<element name="JP2" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X08" package3d_urn="urn:adsk.eagle:package:22409/2" value="" x="27.94" y="66.04" smashed="yes" rot="MR270">
+<attribute name="NAME" x="26.1112" y="76.2762" size="1.27" layer="26" ratio="10" rot="MR270"/>
+<attribute name="POPULARITY" value="67" x="27.94" y="66.04" size="1.778" layer="28" rot="MR270" display="off"/>
+<attribute name="VALUE" x="31.115" y="76.2" size="1.27" layer="28" rot="MR270"/>
 </element>
-<element name="JP1" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X08" package3d_urn="urn:adsk.eagle:package:22409/2" value="" x="7.62" y="41.91" smashed="yes" rot="MR90">
-<attribute name="NAME" x="9.4488" y="31.6738" size="1.27" layer="26" ratio="10" rot="MR90"/>
-<attribute name="POPULARITY" value="67" x="7.62" y="41.91" size="1.778" layer="28" rot="MR90" display="off"/>
-<attribute name="VALUE" x="4.445" y="31.75" size="1.27" layer="28" rot="MR90"/>
+<element name="JP1" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X08" package3d_urn="urn:adsk.eagle:package:22409/2" value="" x="36.195" y="66.04" smashed="yes" rot="MR90">
+<attribute name="NAME" x="38.0238" y="55.8038" size="1.27" layer="26" ratio="10" rot="MR90"/>
+<attribute name="POPULARITY" value="67" x="36.195" y="66.04" size="1.778" layer="28" rot="MR90" display="off"/>
+<attribute name="VALUE" x="33.02" y="55.88" size="1.27" layer="28" rot="MR90"/>
 </element>
 </elements>
 <signals>
@@ -694,7 +686,7 @@ design rules under a new name.</description>
 <contactref element="MS1" pad="2"/>
 <contactref element="U1" pad="5V"/>
 <wire x1="35.56" y1="2.54" x2="38.1" y2="2.54" width="0.4064" layer="16"/>
-<wire x1="35.56" y1="2.54" x2="23.495" y2="46.355" width="0" layer="19" extent="1-1"/>
+<wire x1="35.56" y1="2.54" x2="19.05" y2="36.195" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="GND">
 <contactref element="U1" pad="GND"/>
@@ -702,88 +694,85 @@ design rules under a new name.</description>
 <contactref element="U1" pad="GND2"/>
 <contactref element="MS1" pad="4"/>
 <wire x1="40.64" y1="2.54" x2="43.18" y2="2.54" width="0.4064" layer="16"/>
-<wire x1="28.575" y1="46.355" x2="26.416" y2="50.8" width="0" layer="19" extent="1-1"/>
-<wire x1="40.64" y1="2.54" x2="28.575" y2="46.355" width="0" layer="19" extent="1-1"/>
-</signal>
-<signal name="A4">
-<contactref element="MS1" pad="9"/>
-</signal>
-<signal name="A5">
-<contactref element="MS1" pad="10"/>
-</signal>
-<signal name="MISO">
-<contactref element="MS1" pad="13"/>
-</signal>
-<signal name="MOSI">
-<contactref element="MS1" pad="12"/>
-</signal>
-<signal name="RX">
-<contactref element="MS1" pad="14"/>
-</signal>
-<signal name="SCK">
-<contactref element="MS1" pad="11"/>
-</signal>
-<signal name="TX">
-<contactref element="MS1" pad="15"/>
+<contactref element="J1" pad="1"/>
+<contactref element="J2" pad="1"/>
+<polygon width="0.2032" layer="1">
+<vertex x="0" y="53.34"/>
+<vertex x="0" y="0"/>
+<vertex x="66.04" y="0"/>
+<vertex x="66.04" y="2.54"/>
+<vertex x="68.58" y="5.08"/>
+<vertex x="68.58" y="5.715"/>
+<vertex x="68.58" y="37.465"/>
+<vertex x="68.58" y="37.846"/>
+<vertex x="66.04" y="40.386"/>
+<vertex x="66.04" y="51.816"/>
+<vertex x="64.516" y="53.34"/>
+<vertex x="64.262" y="53.34"/>
+</polygon>
+<wire x1="24.13" y1="36.195" x2="24.13" y2="48.514" width="0.3048" layer="16"/>
+<wire x1="24.13" y1="48.514" x2="26.416" y2="50.8" width="0.3048" layer="16"/>
+<wire x1="43.18" y1="2.54" x2="63.565" y2="28.17" width="0" layer="19" extent="16-16"/>
+<wire x1="5.015" y1="25.17" x2="24.13" y2="36.195" width="0" layer="19" extent="16-16"/>
 </signal>
 <signal name="!RESET">
 <contactref element="U1" pad="RESET"/>
 <contactref element="MS1" pad="1"/>
-<wire x1="33.02" y1="2.54" x2="20.955" y2="46.355" width="0" layer="19" extent="1-1"/>
-</signal>
-<signal name="A0">
-<contactref element="MS1" pad="5"/>
+<wire x1="33.02" y1="2.54" x2="16.51" y2="36.195" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="A1">
 <contactref element="U1" pad="A1"/>
-<contactref element="MS1" pad="6"/>
-<wire x1="53.34" y1="2.54" x2="33.655" y2="46.355" width="0" layer="19" extent="1-1"/>
-</signal>
-<signal name="A2">
-<contactref element="MS1" pad="7"/>
-</signal>
-<signal name="A3">
-<contactref element="MS1" pad="8"/>
 </signal>
 <signal name="AREF">
 <contactref element="U1" pad="AREF"/>
 <contactref element="MS1" pad="3"/>
-<wire x1="26.035" y1="46.355" x2="23.876" y2="50.8" width="0" layer="19" extent="1-1"/>
+<wire x1="23.876" y1="50.8" x2="21.59" y2="48.514" width="0.3048" layer="16"/>
+<wire x1="21.59" y1="48.514" x2="21.59" y2="36.195" width="0.3048" layer="16"/>
 </signal>
 <signal name="M1DIR">
 <contactref element="U1" pad="D7"/>
-<contactref element="MS1" pad="19"/>
-<wire x1="53.975" y1="26.035" x2="45.72" y2="50.8" width="0" layer="19" extent="1-1"/>
+<contactref element="MS1" pad="10"/>
+<wire x1="39.37" y1="36.195" x2="45.72" y2="50.8" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="M2DIR">
 <contactref element="U1" pad="D8"/>
-<contactref element="MS1" pad="23"/>
-<wire x1="43.815" y1="26.035" x2="41.656" y2="50.8" width="0" layer="19" extent="1-1"/>
+<contactref element="MS1" pad="9"/>
+<wire x1="41.656" y1="50.8" x2="36.83" y2="36.195" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="M1PWM">
 <contactref element="U1" pad="D9"/>
-<contactref element="MS1" pad="21"/>
-<wire x1="48.895" y1="26.035" x2="39.116" y2="50.8" width="0" layer="19" extent="1-1"/>
+<contactref element="MS1" pad="8"/>
+<wire x1="34.29" y1="36.195" x2="39.116" y2="50.8" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="USER_SW">
 <contactref element="U1" pad="D12"/>
-<contactref element="MS1" pad="24"/>
-<wire x1="41.275" y1="26.035" x2="31.496" y2="50.8" width="0" layer="19" extent="1-1"/>
+<contactref element="MS1" pad="6"/>
+<wire x1="29.21" y1="36.195" x2="29.21" y2="48.514" width="0.3048" layer="16"/>
+<wire x1="29.21" y1="48.514" x2="31.496" y2="50.8" width="0.3048" layer="16"/>
 </signal>
 <signal name="YELLOW_LED">
 <contactref element="U1" pad="D13"/>
-<contactref element="MS1" pad="25"/>
-<wire x1="38.735" y1="26.035" x2="28.956" y2="50.8" width="0" layer="19" extent="1-1"/>
+<contactref element="MS1" pad="5"/>
+<wire x1="26.67" y1="36.195" x2="26.67" y2="48.514" width="0.3048" layer="16"/>
+<wire x1="26.67" y1="48.514" x2="28.956" y2="50.8" width="0.3048" layer="16"/>
 </signal>
 <signal name="SCL">
 <contactref element="U1" pad="SCL"/>
 <contactref element="MS1" pad="18"/>
-<wire x1="18.796" y1="50.8" x2="56.515" y2="26.035" width="0" layer="19" extent="1-1"/>
+<contactref element="J1" pad="4"/>
+<contactref element="J2" pad="4"/>
+<wire x1="52.07" y1="15.875" x2="63.565" y2="25.17" width="0" layer="19" extent="16-16"/>
+<wire x1="18.796" y1="50.8" x2="52.07" y2="15.875" width="0" layer="19" extent="1-1"/>
+<wire x1="5.015" y1="28.17" x2="18.796" y2="50.8" width="0" layer="19" extent="16-16"/>
 </signal>
 <signal name="SDA">
 <contactref element="U1" pad="SDA"/>
 <contactref element="MS1" pad="17"/>
-<wire x1="21.336" y1="50.8" x2="59.055" y2="26.035" width="0" layer="19" extent="1-1"/>
+<contactref element="J1" pad="3"/>
+<contactref element="J2" pad="3"/>
+<wire x1="54.61" y1="15.875" x2="63.565" y2="26.17" width="0" layer="19" extent="16-16"/>
+<wire x1="21.336" y1="50.8" x2="54.61" y2="15.875" width="0" layer="19" extent="1-1"/>
+<wire x1="5.015" y1="27.17" x2="21.336" y2="50.8" width="0" layer="19" extent="16-16"/>
 </signal>
 <signal name="VIN">
 <contactref element="U1" pad="VIN"/>
@@ -799,33 +788,17 @@ design rules under a new name.</description>
 </signal>
 <signal name="BUZZER">
 <contactref element="U1" pad="D6"/>
-<contactref element="MS1" pad="20"/>
-<wire x1="51.435" y1="26.035" x2="48.26" y2="50.8" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="M2PWM">
 <contactref element="U1" pad="D10"/>
-<contactref element="MS1" pad="22"/>
-<wire x1="46.355" y1="26.035" x2="36.576" y2="50.8" width="0" layer="19" extent="1-1"/>
+<contactref element="MS1" pad="7"/>
+<wire x1="31.75" y1="36.195" x2="31.75" y2="45.974" width="0.3048" layer="16"/>
+<wire x1="31.75" y1="45.974" x2="36.576" y2="50.8" width="0.3048" layer="16"/>
 </signal>
-<signal name="N$1">
-<contactref element="J1" pad="1"/>
-<contactref element="J2" pad="1"/>
-<wire x1="5.65" y1="14.375" x2="62.93" y2="16.74" width="0" layer="19" extent="1-1"/>
-</signal>
-<signal name="N$2">
+<signal name="VCC">
 <contactref element="J1" pad="2"/>
 <contactref element="J2" pad="2"/>
-<wire x1="5.65" y1="15.375" x2="62.93" y2="15.74" width="0" layer="19" extent="1-1"/>
-</signal>
-<signal name="N$3">
-<contactref element="J1" pad="3"/>
-<contactref element="J2" pad="3"/>
-<wire x1="5.65" y1="16.375" x2="62.93" y2="14.74" width="0" layer="19" extent="1-1"/>
-</signal>
-<signal name="N$4">
-<contactref element="J1" pad="4"/>
-<contactref element="J2" pad="4"/>
-<wire x1="5.65" y1="17.375" x2="62.93" y2="13.74" width="0" layer="19" extent="1-1"/>
+<wire x1="5.015" y1="26.17" x2="63.565" y2="27.17" width="0" layer="19" extent="16-16"/>
 </signal>
 <signal name="N$5">
 <contactref element="JP2" pad="1"/>
@@ -874,6 +847,21 @@ design rules under a new name.</description>
 </signal>
 <signal name="N$20">
 <contactref element="JP1" pad="8"/>
+</signal>
+<signal name="MISO">
+<contactref element="MS1" pad="13"/>
+</signal>
+<signal name="MOSI">
+<contactref element="MS1" pad="12"/>
+</signal>
+<signal name="RX">
+<contactref element="MS1" pad="14"/>
+</signal>
+<signal name="SCK">
+<contactref element="MS1" pad="11"/>
+</signal>
+<signal name="TX">
+<contactref element="MS1" pad="15"/>
 </signal>
 </signals>
 <mfgpreviewcolors>
